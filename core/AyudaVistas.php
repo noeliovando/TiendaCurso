@@ -11,3 +11,4 @@ class AyudaVistas{
         return $urlString;
     }
 }
+?>

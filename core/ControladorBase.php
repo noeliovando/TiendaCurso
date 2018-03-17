@@ -7,6 +7,7 @@
 
 class ControladorBase{
     public  function  __construct(){
+        require_once 'Conectar.php';
         require_once 'EntidadBase.php';
         require_once 'ModeloBase.php';
 
@@ -17,11 +18,11 @@ class ControladorBase{
 
     public function view($vista,$datos){
         foreach($datos as $id_assoc => $valor){
-            ${id_assoc} = $valor;
+            ${$id_assoc} = $valor;
         }
 
         require_once 'core/AyudaVistas.php';
-        $shelper = new AyudaVistas();
+        $helper = new AyudaVistas();
 
         require_once 'view/'.$vista.'View.php';
     }
@@ -30,3 +31,4 @@ class ControladorBase{
         header("Location:index.php?controller=".$controlador."&accion=".$accion);
     }
 }
+?>

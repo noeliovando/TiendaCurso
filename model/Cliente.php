@@ -5,12 +5,12 @@
  * Time: 10:31 AM
  */
 
-class Usuario extends EntidadBase{
+class Cliente extends EntidadBase{
     private $id,$cedula,$nombre,$apellido,$direccion,$telefono,$email;
 
-    public function __construct($table){
+    public function __construct($adapter){
         $table = 'cliente';
-        parent::__construct($table);
+        parent::__construct($table,$adapter);
     }
 
     /**
@@ -127,16 +127,18 @@ class Usuario extends EntidadBase{
     }
 
     public function save(){
-        $query = "INSERT INTO usuario(id,cedula,nombre,apellido,direccion,telefono,email) "
+        $query = "INSERT INTO cliente(id,cedula,nombre,apellido,direccion,telefono,email) "
             ."VALUES (NULL,"
             ."'".$this->cedula."',"
             ."'".$this->nombre."',"
             ."'".$this->apellido."',"
             ."'".$this->direccion."',"
             ."'".$this->telefono."',"
-            ."'".$this->email."',"
+            ."'".$this->email."'"
             .")";
         $save = $this->db()->query($query);
+        echo $query;
         return $save;
     }
 }
+?>

@@ -5,5 +5,6 @@
  * Time: 09:48 PM
  */
 
-define("CONTROLADOR_DEFECTO","Usuarios");
+define("CONTROLADOR_DEFECTO","Cliente");
 define("ACCION_DEFECTO","index");
+?>

@@ -9,7 +9,8 @@ return array(
     "driver" => "mysql",
     "host" => "localhost",
     "user" => "root",
-    "pass" => "",
+    "pass" => "root",
     "database" => "tiendacurso",
     "charset" => "utf8"
 );
+?>
